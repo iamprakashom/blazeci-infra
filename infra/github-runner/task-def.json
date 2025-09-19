@@ -1,0 +1,33 @@
+{
+  "family": "github-runner-task",
+  "containerDefinitions": [
+    {
+      "name": "github-runner",
+      "image": "114030600777.dkr.ecr.ap-south-1.amazonaws.com/github-runner:latest",
+      "essential": true,
+      "memory": 2048,
+      "cpu": 1024,
+      "environment": [
+        { "name": "GH_OWNER", "value": "keshavag273" },
+        { "name": "GH_REPO", "value": "python-app" },
+        { "name": "RUNNER_LABELS", "value": "blazeci-small" },
+        { "name": "GH_TOKEN", "value": "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" }
+      ],
+      "logConfiguration": {
+        "logDriver": "awslogs",
+        "options": {
+          "awslogs-group": "/ecs/github-runner",
+          "awslogs-region": "ap-south-1",
+          "awslogs-stream-prefix": "ecs"
+        }
+      }
+    }
+  ],
+  "requiresCompatibilities": ["FARGATE"],
+  "networkMode": "awsvpc",
+  "cpu": "1024",
+  "memory": "2048",
+  "executionRoleArn": "arn:aws:iam::114030600777:role/ecsTaskExecutionRole"
+}
+
+
