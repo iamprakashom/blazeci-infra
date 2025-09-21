@@ -3,15 +3,15 @@
   "containerDefinitions": [
     {
       "name": "github-runner",
-      "image": "114030600777.dkr.ecr.ap-south-1.amazonaws.com/github-runner:latest",
+      "image": "114030600777.dkr.ecr.ap-south-1.amazonaws.com/github-runner:v1.0.0",
       "essential": true,
       "memory": 2048,
       "cpu": 1024,
       "environment": [
-        { "name": "GH_OWNER", "value": "keshavag273" },
-        { "name": "GH_REPO", "value": "python-app" },
+        { "name": "GH_OWNER", "value": "keshavagr273" },
+        { "name": "GH_REPO", "value": "django-app" },
         { "name": "RUNNER_LABELS", "value": "blazeci-small" },
-        { "name": "GH_TOKEN", "value": "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" }
+        { "name": "GITHUB_RUNNER_PAT", "value": "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" }
       ],
       "logConfiguration": {
         "logDriver": "awslogs",
